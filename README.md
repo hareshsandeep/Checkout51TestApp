@@ -1,2 +1,2 @@
-# checkout-my-kotlin-recyclerview-junit-filter-example
+# Checkout51TestApp
 The idea here is to implement a simple app using Kotlin, Recycler view, JUnit and a Filter.
