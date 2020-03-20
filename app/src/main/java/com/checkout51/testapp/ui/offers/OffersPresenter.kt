@@ -35,6 +35,7 @@ class OffersPresenter constructor(private val orderService: OrdersService = (Ord
         }
 
         override fun onFailure(error: ResponseError) {
+            offerList = null
             view()?.showError()
         }
     }
