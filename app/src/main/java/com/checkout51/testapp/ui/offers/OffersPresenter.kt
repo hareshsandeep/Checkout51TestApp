@@ -24,6 +24,7 @@ class OffersPresenter constructor(private val orderService: OrdersService = (Ord
     }
 
     override fun onReloadClicked() {
+        view()?.showProgress()
         orderService.fetchOrders(call)
     }
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Offers</string>
+    <string name="app_name">Offers demo</string>
     <string name="action_refresh">Refresh</string>
     <string name="try_again">Try again</string>
     <string name="filter_offer_by">Sort offers by:</string>
