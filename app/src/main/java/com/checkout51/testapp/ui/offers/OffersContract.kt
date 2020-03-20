@@ -18,7 +18,7 @@ object OffersContract {
         fun loadData()
         fun tryAgainClicked()
         fun onReloadClicked()
-        fun filterBy(filter: SortOrders)
+        fun sortBy(sortBy: SortOrders)
         fun onFilterClicked()
     }
 

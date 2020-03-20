@@ -29,33 +29,32 @@ ext {
     ]
 
     libraries = [
-            // Kotlin standard library
-            "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin_version",
-            "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin_version",
-            "androidx.core:core-ktx:$versions.kotlin_core_version",
-            //Kotlin Coroutines
-            "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.kotlinCoroutineVersion",
-            "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.kotlinCoroutineVersion",
-
-            //Square - Retrofit, Picasso
-            "com.squareup.picasso:picasso:$versions.picasso",
-            "com.squareup.retrofit2:retrofit:$versions.retrofit",
-            "com.squareup.retrofit2:converter-moshi:$versions.retrofit",
-            "com.squareup.okhttp3:logging-interceptor:$versions.retrofit_interceptor",
-            "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$versions.retrofitCoroutines",
-
             // Android UI and appcompat
             "androidx.appcompat:appcompat:$versions.appcompat_version",
             "com.android.support:cardview-v7:$versions.appcompat_version",
             "com.google.android.material:material:$versions.material_version",
             "com.android.support:design:$versions.material_version",
             "androidx.constraintlayout:constraintlayout:$versions.material_version",
-            "android.arch.lifecycle:extensions:$versions.lifecycle_version"
+            "android.arch.lifecycle:extensions:$versions.lifecycle_version",
+
+            // Kotlin standard library
+            "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin_version",
+            "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin_version",
+            "androidx.core:core-ktx:$versions.kotlin_core_version",
+
+            //Square - Retrofit, Picasso
+            "com.squareup.picasso:picasso:$versions.picasso",
+            "com.squareup.retrofit2:retrofit:$versions.retrofit",
+            "com.squareup.retrofit2:converter-moshi:$versions.retrofit",
+            "com.squareup.okhttp3:logging-interceptor:$versions.retrofit_interceptor",
+            "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$versions.retrofitCoroutines"
     ]
 
     testLibraries = [
             "junit:junit:$versions.junit_version",
+            "com.nhaarman:mockito-kotlin-kt1.1:1.5.0",
             "org.mockito:mockito-core:2.23.0",
+            "org.mockito:mockito-inline:2.23.0"
     ]
 
     androidTestLibraries = [

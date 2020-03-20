@@ -52,11 +52,11 @@ class OffersActivity : AppCompatActivity(), OffersContract.View {
 
 
         filterByName.setOnClickListener {
-            mPresenter.filterBy(SortOrders.NAME)
+            mPresenter.sortBy(SortOrders.NAME)
         }
 
         filterByCashback.setOnClickListener {
-            mPresenter.filterBy(SortOrders.CASH_BACK)
+            mPresenter.sortBy(SortOrders.CASH_BACK)
         }
 
         closeBtn.setOnClickListener {
