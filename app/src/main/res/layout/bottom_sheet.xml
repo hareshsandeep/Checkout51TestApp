@@ -5,69 +5,69 @@
     android:layout_width="match_parent"
     android:layout_height="250dp"
     android:background="@android:color/white"
+    android:elevation="2dp"
     android:padding="@dimen/activity_horizontal_spacing"
     app:behavior_hideable="true"
     app:behavior_peekHeight="0dp"
-    android:elevation="2dp"
     app:layout_behavior="@string/bottom_sheet_behavior">
 
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="48dp"
+        android:gravity="center_vertical"
         android:text="@string/filter_offer_by"
         android:textColor="@android:color/black"
-        android:gravity="center_vertical"
         android:textSize="18sp" />
 
     <View
         android:id="@+id/divider1"
-        android:layout_below="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_below="@+id/title"
         android:background="@color/colorPrimary" />
 
     <Button
         android:id="@+id/filterByName"
-        android:layout_below="@+id/divider1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/divider1"
+        android:background="?attr/selectableItemBackgroundBorderless"
         android:clickable="true"
         android:focusable="true"
-        android:background="?attr/selectableItemBackgroundBorderless"
         android:text="@string/name" />
 
     <View
         android:id="@+id/divider2"
-        android:layout_below="@+id/filterByName"
         android:layout_width="match_parent"
         android:layout_height="2dp"
+        android:layout_below="@+id/filterByName"
         android:background="@color/app_background" />
 
     <Button
         android:id="@+id/filterByCashback"
-        android:layout_below="@+id/divider2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/divider2"
+        android:background="?attr/selectableItemBackgroundBorderless"
         android:clickable="true"
         android:focusable="true"
-        android:background="?attr/selectableItemBackgroundBorderless"
         android:text="@string/cash_back" />
 
     <View
         android:id="@+id/divider3"
-        android:layout_below="@+id/filterByCashback"
         android:layout_width="match_parent"
         android:layout_height="2dp"
+        android:layout_below="@+id/filterByCashback"
         android:background="@color/app_background" />
 
     <Button
         android:id="@+id/closeBtn"
-        android:layout_below="@+id/divider3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/divider3"
+        android:background="?attr/selectableItemBackgroundBorderless"
         android:clickable="true"
         android:focusable="true"
-        android:background="?attr/selectableItemBackgroundBorderless"
         android:text="@string/cancel" />
 </RelativeLayout>
