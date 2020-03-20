@@ -3,18 +3,20 @@ package com.checkout51.testapp.ui.offers
 import com.checkout51.testapp.data.models.Offer
 import com.checkout51.testapp.data.network.RequestCallback
 import com.checkout51.testapp.data.network.ResponseError
-import com.checkout51.testapp.ui.base.BasePresenterImpl
+import com.checkout51.testapp.ui.base.BasePresenter
 
-class OffersPresenter(private val orderService: OrdersService) :
-    BasePresenterImpl<OffersContract.View>(), OffersContract.Presenter {
+class OffersPresenter constructor(private val orderService: OrdersService = (OrdersService())) :
+    BasePresenter<OffersContract.View>(), OffersContract.Presenter {
 
-    override fun onViewLoaded() {
-        loadData()
-    }
+    var offerList: List<Offer>? = null
 
-    private fun loadData() {
-        mView?.showProgress()
-        orderService.fetchOrders(call)
+    override fun loadData() {
+        view()?.showProgress()
+        if (offerList.isNullOrEmpty()) {
+            orderService.fetchOrders(call)
+        } else {
+            view()?.showOrders(offerList!!)
+        }
     }
 
     override fun tryAgainClicked() {
@@ -22,30 +24,26 @@ class OffersPresenter(private val orderService: OrdersService) :
     }
 
     override fun onReloadClicked() {
-        loadData()
+        orderService.fetchOrders(call)
     }
 
     private val call: RequestCallback<List<Offer>> = object : RequestCallback<List<Offer>> {
         override fun onSuccess(offers: List<Offer>) {
-            mView?.showOrders(offers)
+            offerList = offers
+            view()?.showOrders(offers)
         }
 
         override fun onFailure(error: ResponseError) {
-            mView?.showError()
+            view()?.showError()
         }
     }
 
-    override fun detachView() {
-        super.detachView()
-        mView = null
-    }
-
     override fun filterBy(filter: SortOrders) {
-        mView?.hideBottomSheet()
-        mView?.filterAdapter(filter)
+        view()?.hideBottomSheet()
+        view()?.filterAdapter(filter)
     }
 
     override fun onFilterClicked() {
-        mView?.showBottomSheet()
+        view()?.showBottomSheet()
     }
 }

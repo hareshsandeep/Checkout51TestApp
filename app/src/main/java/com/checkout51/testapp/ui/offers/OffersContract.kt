@@ -2,11 +2,9 @@ package com.checkout51.testapp.ui.offers
 
 import com.checkout51.testapp.data.models.Offer
 import com.checkout51.testapp.data.network.RequestCallback
-import com.checkout51.testapp.ui.base.BasePresenter
-import com.checkout51.testapp.ui.base.BaseView
 
 object OffersContract {
-    interface View : BaseView {
+    interface View {
         fun showProgress()
         fun hideProgress()
         fun showOrders(offers: List<Offer>)
@@ -16,8 +14,8 @@ object OffersContract {
         fun filterAdapter(sortType: SortOrders)
     }
 
-    interface Presenter : BasePresenter<View> {
-        fun onViewLoaded()
+    interface Presenter {
+        fun loadData()
         fun tryAgainClicked()
         fun onReloadClicked()
         fun filterBy(filter: SortOrders)

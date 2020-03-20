@@ -6,11 +6,12 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.checkout51.testapp.R
 import com.checkout51.testapp.data.models.Offer
 import com.checkout51.testapp.ui.adapters.OffersAdapter
-import com.checkout51.testapp.ui.base.BaseActivity
+import com.checkout51.testapp.ui.base.PresenterProviders
 import com.checkout51.testapp.utils.getSortingString
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetBehavior.from
@@ -20,16 +21,21 @@ import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.row_item_order_header.*
 import java.util.*
 
-class OffersActivity : BaseActivity<OffersContract.View, OffersContract.Presenter>(),
-    OffersContract.View {
-    override var mPresenter: OffersContract.Presenter = OffersPresenter(OrdersService())
+class OffersActivity : AppCompatActivity(), OffersContract.View {
+    private lateinit var mPresenter: OffersPresenter
     private var mAdapter: OffersAdapter? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+        setUpUi();
 
+        mPresenter = PresenterProviders.of(this).get(OffersPresenter::class.java)
+        mPresenter.attachView(this, lifecycle)
+        mPresenter.loadData()
+    }
+
+    private fun setUpUi() {
         recycler_orders.apply {
             layoutManager = LinearLayoutManager(this@OffersActivity)
             mAdapter = OffersAdapter(ArrayList<Offer>())
@@ -44,12 +50,7 @@ class OffersActivity : BaseActivity<OffersContract.View, OffersContract.Presente
             mPresenter.onFilterClicked()
         }
 
-        initBottomSheet()
 
-        mPresenter.onViewLoaded()
-    }
-
-    private fun initBottomSheet() {
         filterByName.setOnClickListener {
             mPresenter.filterBy(SortOrders.NAME)
         }
@@ -143,8 +144,8 @@ class OffersActivity : BaseActivity<OffersContract.View, OffersContract.Presente
     override fun filterAdapter(sortType: SortOrders) {
         mAdapter?.sortItems(sortType)
         Toast.makeText(
-            getContext(),
-            getSortingString(getContext(), sortType),
+            this,
+            getSortingString(this, sortType),
             Toast.LENGTH_SHORT
         ).show()
     }

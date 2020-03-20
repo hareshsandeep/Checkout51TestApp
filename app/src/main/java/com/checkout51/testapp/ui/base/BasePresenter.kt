@@ -1,8 +1,29 @@
 package com.checkout51.testapp.ui.base
 
-interface BasePresenter<in V : BaseView> {
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.OnLifecycleEvent
+import androidx.lifecycle.ViewModel
 
-    fun attachView(view: V)
+open class BasePresenter<View> : ViewModel(), LifecycleObserver {
 
-    fun detachView()
+    private var view: View? = null
+    private var viewLifecycle: Lifecycle? = null
+
+    fun attachView(view: View, viewLifecycle: Lifecycle) {
+        this.view = view
+        this.viewLifecycle = viewLifecycle
+
+        viewLifecycle.addObserver(this)
+    }
+
+    protected fun view(): View? {
+        return view
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
+    private fun onViewDestroyed() {
+        view = null
+        viewLifecycle = null
+    }
 }
