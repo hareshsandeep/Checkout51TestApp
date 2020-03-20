@@ -3,10 +3,10 @@ package com.checkout51.testapp.ui.offers
 import com.checkout51.testapp.data.models.Offer
 import com.checkout51.testapp.data.network.RequestCallback
 import com.checkout51.testapp.data.network.ResponseError
-import com.checkout51.testapp.ui.base.BaseMvpPresenterImpl
+import com.checkout51.testapp.ui.base.BasePresenterImpl
 
 class OffersPresenter(private val orderService: OrdersService) :
-    BaseMvpPresenterImpl<OffersContract.View>(), OffersContract.Presenter {
+    BasePresenterImpl<OffersContract.View>(), OffersContract.Presenter {
 
     override fun onViewLoaded() {
         loadData()

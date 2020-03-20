@@ -1,6 +1,6 @@
 package com.checkout51.testapp.ui.base
 
-open class BaseMvpPresenterImpl<V : BaseView> : BasePresenter<V> {
+open class BasePresenterImpl<V : BaseView> : BasePresenter<V> {
 
     protected var mView: V? = null
 
