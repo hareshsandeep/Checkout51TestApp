@@ -39,9 +39,9 @@ class OffersPresenter constructor(private val orderService: OrdersService = (Ord
         }
     }
 
-    override fun filterBy(filter: SortOrders) {
+    override fun sortBy(sortBy: SortOrders) {
         view()?.hideBottomSheet()
-        view()?.filterAdapter(filter)
+        view()?.filterAdapter(sortBy)
     }
 
     override fun onFilterClicked() {
