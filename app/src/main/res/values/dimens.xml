@@ -1,3 +1,16 @@
 <resources>
+    <dimen name="zero_dp">0dp</dimen>
+
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="activity_horizontal_spacing">16dp</dimen>
+    <dimen name="activity_vertical_spacing">8dp</dimen>
+
+    <dimen name="recyclerview_padding_top">48dp</dimen>
+    <dimen name="recyclerview_padding_bottom">100dp</dimen>
+    <dimen name="row_item_space_horizontal">5dp</dimen>
+    <dimen name="row_item_padding_vertical">10dp</dimen>
+
+    <dimen name="cardview_height">100dp</dimen>
+
+    <dimen name="imageview_width_height">100dp</dimen>
 </resources>

@@ -1,0 +1,6 @@
+<!--This files contains accessibility string -->
+<resources>
+    <string name="offers_error">
+        <![CDATA[Sorry, it\'s us, and not you. \n\n
+        We are currently facing technical difficulty, please try again later.]]></string>
+</resources>

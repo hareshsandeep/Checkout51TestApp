@@ -1,0 +1,4 @@
+<!--This files contains accessibility string -->
+<resources>
+    <string name="content_icon">Icon</string>
+</resources>

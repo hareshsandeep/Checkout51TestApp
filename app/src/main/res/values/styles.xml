@@ -17,4 +17,41 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="error_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:padding">30sp</item>
+        <item name="android:color">@android:color/black</item>
+    </style>
+
+    <style name="product_name_text">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:color">@android:color/black</item>
+    </style>
+
+    <style name="currency_text">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:typeface">serif</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:color">@android:color/black</item>
+    </style>
+
+    <style name="card_view_custom_theme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/cardview_height</item>
+        <item name="android:layout_marginStart">@dimen/zero_dp</item>
+        <item name="android:layout_marginEnd">@dimen/zero_dp</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="cardBackgroundColor">@android:color/white</item>
+    </style>
+
 </resources>
