@@ -5,6 +5,6 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 interface OffersApi {
-    @GET("bins/95a8c")
+    @GET("checkout51/c51-coding-challenge/master/c51.json")
     fun getOrders(): Call<OfferResponse>
 }

@@ -7,7 +7,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 
 
 object RetrofitManager {
-    private const val serverUrl: String = "https://api.myjson.com/"
+    private const val serverUrl: String = "https://raw.githubusercontent.com/"
     var INSTANCE: Retrofit
 
     init {
