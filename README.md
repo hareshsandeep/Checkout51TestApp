@@ -1,26 +1,15 @@
 # Checkout51TestApp
 The idea here is to implement a single activity app using Kotlin, Recycler view, JUnit and some sorting.
 
-# Framework 
-- MVP
+| Framework     | Libraries     | Networking    | Tests         |
+| ------------- | ------------- | ------------- | ------------- |
+|     MVP       | Kotlin        | Retrofit      | JUnit         |
+|               | Recyclerview  | Picasso       | Mockito       |
+|               | Cardview      | Moshi         |               |
+|               | Lifecycle     |               |               |
+|               | ConstraintLayout|             |               |
+|               | Design        |               |               |
 
-# Libraries
-- Kotlin
-- Recyclerview
-- Cardview
-- Lifecycle
-- ConstraintLayout
-- Design
-
-# Networking
-- Retrofit
-- Picasso
-- Moshi
-
-
-# Tests
-- JUnit
-- Mockito
 
 # Screens
 
