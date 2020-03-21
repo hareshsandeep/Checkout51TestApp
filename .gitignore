@@ -86,3 +86,5 @@ lint/tmp/
 /.idea/codeStyles/codeStyleConfig.xml
 /.idea/misc.xml
 /.idea/codeStyles/Project.xml
+/gradle/wrapper/gradle-wrapper.jar
+/gradle/wrapper/gradle-wrapper.properties
