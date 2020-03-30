@@ -1,4 +1,4 @@
-# Checkout51TestApp
+# TestApp
 The idea here is to implement a single activity app using Kotlin, Recycler view, JUnit and some sorting.
 
 | Framework     | Libraries     | Networking    | Tests         |
